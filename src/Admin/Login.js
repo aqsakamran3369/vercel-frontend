@@ -14,7 +14,7 @@ function Login() {
     const login = async () => {
         try {
             dispatch(showLoading());
-            const response = await axios.post("/api/portfolio/admin-login", {
+            const response = await axios.post("https://vercel-backend-ebon-chi.vercel.app/api/portfolio/admin-login", {
                 username: user.username.trim(),  // Ensure no extra spaces
                 password: user.password.trim()   // Ensure no extra spaces
             });

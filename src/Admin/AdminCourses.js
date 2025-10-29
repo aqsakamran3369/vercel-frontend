@@ -18,12 +18,12 @@ function AdminCourses() {
             dispatch(showLoading());
             let response;
             if (selectedItemForEdit) {
-                response = await axios.post("/api/portfolio/update-courses", {
+                response = await axios.post("https://vercel-backend-ebon-chi.vercel.app/api/portfolio/update-courses", {
                     ...values,
                     _id: selectedItemForEdit._id,
                 });
             } else {
-                response = await axios.post("/api/portfolio/add-courses", values);
+                response = await axios.post("https://vercel-backend-ebon-chi.vercel.app/api/portfolio/add-courses", values);
             }
 
             dispatch(HideLoading());

@@ -15,7 +15,7 @@ function AdminIntro() {
     const onFinish = async (values) => {
         try {
            dispatch(showLoading())
-           const response = await axios.post("/api/portfolio/update-intro",{ ...values,
+           const response = await axios.post("https://vercel-backend-ebon-chi.vercel.app/api/portfolio/update-intro",{ ...values,
             _id: portfolioData.intro._id,
            });
            dispatch(HideLoading())

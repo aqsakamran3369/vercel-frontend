@@ -17,12 +17,12 @@ function AdminProjects() {
             dispatch(showLoading());
             let response;
             if (selectedItemForEdit) {
-                response = await axios.post("/api/portfolio/update-projects", {
+                response = await axios.post("https://vercel-backend-ebon-chi.vercel.app/api/portfolio/update-projects", {
                     ...values,
                     _id: selectedItemForEdit._id,
                 });
             } else {
-                response = await axios.post("/api/portfolio/add-projects", values);
+                response = await axios.post("https://vercel-backend-ebon-chi.vercel.app/api/portfolio/add-projects", values);
             }
 
             dispatch(HideLoading());
@@ -43,7 +43,7 @@ function AdminProjects() {
     const onDelete = async (project) => {
         try {
             dispatch(showLoading());
-            const response = await axios.post("/api/portfolio/delete-projects", { _id: project._id });
+            const response = await axios.post("https://vercel-backend-ebon-chi.vercel.app/api/portfolio/delete-projects", { _id: project._id });
             if (response.data.success) {
                 message.success(response.data.message);
                 dispatch(HideLoading());
