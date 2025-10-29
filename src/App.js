@@ -9,6 +9,7 @@ import Admin from "./Admin";
 import Login from "./Admin/Login";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
+import "./App.css";
 
 function App() {
   const { loading, portfolioData, reloadData } = useSelector((state) => state.root);
